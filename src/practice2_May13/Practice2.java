@@ -82,11 +82,11 @@ public class Practice2 {
 
         int maxDigit = 0;
         int minDigit = 9;
-        int temp = number;
+
 
         // Цикл while для извлечения каждой цифры
-        while (temp > 0) {
-            int digit = temp % 10;  // Получаем последнюю цифру
+        while (number > 0) {
+            int digit = number % 10;  // Получаем последнюю цифру
             // Находим максимальную цифру
             if (digit > maxDigit) {
                 maxDigit = digit;
@@ -96,7 +96,7 @@ public class Practice2 {
                 minDigit = digit;
             }
 
-            temp = temp / 10;  // Убираем последнюю цифру
+            number = number / 10;  // Убираем последнюю цифру
         }
         System.out.println("Максимальная цифра: " + maxDigit);
         System.out.println("Минимальная цифра: " + minDigit);
