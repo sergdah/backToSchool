@@ -1,4 +1,4 @@
-package task9;
+package task9_10;
 
 public class Bird extends Animal {
     private String family;
@@ -50,5 +50,25 @@ public class Bird extends Animal {
                 " maxLifespan=" + getMaxLifespan() +
                 " foodType=" + getFoodType()  +
                 " id=" + getId();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Bird)) return false;
+
+        Bird bird = (Bird) o;
+
+        return getId() == bird.getId() &&
+                bird.maxFlightHeight == maxFlightHeight &&
+                family.equals(bird.family) &&
+                getColor().equals(bird.getColor()) &&
+                getMaxLifespan() == bird.getMaxLifespan() &&
+                getFoodType().equals(bird.getFoodType());
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(getId(), family, maxFlightHeight,
+                getColor(), getMaxLifespan(), getFoodType());
     }
 }

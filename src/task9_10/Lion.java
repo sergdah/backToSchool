@@ -1,4 +1,4 @@
-package task9;
+package task9_10;
 
 public class Lion extends Animal {
     private String name;

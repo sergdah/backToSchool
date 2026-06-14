@@ -1,4 +1,4 @@
-package task9;
+package task9_10;
 
 public class Dog extends Animal {
     private String name;
@@ -61,5 +61,27 @@ public class Dog extends Animal {
                 " maxLifespan=" + getMaxLifespan() +
                 " foodType=" + getFoodType() +
                 " id=" + getId();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Dog)) return false;
+
+        Dog dog = (Dog) o;
+
+        return getId() == dog.getId() &&
+                dog.averageWeight == averageWeight &&
+                name.equals(dog.name) &&
+                breed.equals(dog.breed) &&
+                getColor().equals(dog.getColor()) &&
+                getMaxLifespan() == dog.getMaxLifespan() &&
+                getFoodType().equals(dog.getFoodType());
+    }
+
+    @Override
+    public int hashCode() {
+        // Используем Objects.hash() для генерации хеша на основе полей
+        return java.util.Objects.hash(getId(), name, breed, averageWeight,
+                getColor(), getMaxLifespan(), getFoodType());
     }
 }

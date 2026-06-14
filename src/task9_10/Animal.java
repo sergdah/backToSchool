@@ -1,4 +1,4 @@
-package task9;
+package task9_10;
 
 public class Animal {
     private String color;

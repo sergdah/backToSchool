@@ -1,4 +1,4 @@
-package task9;
+package task9_10;
 
 public class Zoo {
     private Animal[] animals;
