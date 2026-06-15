@@ -1,12 +1,8 @@
 package task9_10;
 
 public class Zoo {
-    private Animal[] animals;
+    private Animal[] animals = new Animal[0];
     private int animalCount = 0;
-
-    public Zoo() {
-        animals = new Animal[0];
-    }
 
     public void addAnimal(Animal animal) {
         Animal[] newAnimals = new Animal[animals.length + 1];
