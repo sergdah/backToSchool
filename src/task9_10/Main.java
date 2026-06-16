@@ -1,7 +1,7 @@
 package task9_10;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
         Zoo zoo = new Zoo();
 
         System.out.println("вэлком ту зоопарк:");
@@ -9,6 +9,7 @@ public class Main {
         Dog dog1 = new Dog("Бежевая", 15, "корм", "Элли", "golden retriver", 18);
         Dog dog2 = new Dog("Белый", 18, "кости", "Барон", "Лабрадор", 15);
         Dog dog3 = new Dog("Красный", 14, "мясо", "Шарик", "Немецкая овчарка", 20);
+        Object dog4 = dog3.myClone();
 
         zoo.addAnimal(dog1);
         zoo.addAnimal(dog2);
@@ -60,5 +61,15 @@ public class Main {
         zoo.removeAnimal(2);
 
         zoo.printAllAnimals();
+
+        System.out.println(dog1.equals(dog2));
+        System.out.println(dog3.equals(dog4));
+        System.out.println(dog3.hashCode());
+        System.out.println(dog4.hashCode());
+
+        System.out.println(bird1.hashCode());
+        System.out.println(bird2.hashCode());
+
+
     }
 }

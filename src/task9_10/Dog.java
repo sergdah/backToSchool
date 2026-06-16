@@ -1,6 +1,6 @@
 package task9_10;
 
-public class Dog extends Animal {
+public class Dog extends Animal implements Cloneable{
     private String name;
     private String breed;
     private double averageWeight;
@@ -69,8 +69,7 @@ public class Dog extends Animal {
 
         Dog dog = (Dog) o;
 
-        return getId() == dog.getId() &&
-                dog.averageWeight == averageWeight &&
+        return  dog.averageWeight == averageWeight &&
                 name.equals(dog.name) &&
                 breed.equals(dog.breed) &&
                 getColor().equals(dog.getColor()) &&
@@ -81,7 +80,11 @@ public class Dog extends Animal {
     @Override
     public int hashCode() {
         // Используем Objects.hash() для генерации хеша на основе полей
-        return java.util.Objects.hash(getId(), name, breed, averageWeight,
+        return java.util.Objects.hash(name, breed, averageWeight,
                 getColor(), getMaxLifespan(), getFoodType());
+    }
+
+    public Object myClone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

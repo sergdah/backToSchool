@@ -58,8 +58,7 @@ public class Bird extends Animal {
 
         Bird bird = (Bird) o;
 
-        return getId() == bird.getId() &&
-                bird.maxFlightHeight == maxFlightHeight &&
+        return  bird.maxFlightHeight == maxFlightHeight &&
                 family.equals(bird.family) &&
                 getColor().equals(bird.getColor()) &&
                 getMaxLifespan() == bird.getMaxLifespan() &&
@@ -68,7 +67,7 @@ public class Bird extends Animal {
 
     @Override
     public int hashCode() {
-        return java.util.Objects.hash(getId(), family, maxFlightHeight,
+        return java.util.Objects.hash(family, maxFlightHeight,
                 getColor(), getMaxLifespan(), getFoodType());
     }
 }
