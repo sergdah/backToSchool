@@ -1,4 +1,4 @@
-package task13.task13_AI;
+package task13;
 
 public enum FacStatus {
     ACTIVE,

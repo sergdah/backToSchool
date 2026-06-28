@@ -46,7 +46,7 @@ public class Main {
         // Проверка лимита палаты
         maleWard1.addPatientByDiagnosis(p4);
 
-        // Проверка дубликата с одинаковыми полями (Должна быть ошибка дубликата благодаря equals)
+        // Проверка дубликата с одинаковыми полями
         Patient duplicateP1 = new Patient("P001", "Игорь", "Петров", "Грипп", 30, Gender.MALE);
         maleWard1.addPatientByDiagnosis(duplicateP1);
 

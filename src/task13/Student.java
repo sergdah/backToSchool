@@ -3,55 +3,37 @@ package task13;
 public class Student {
     private String firstName;
     private String lastName;
-    private String dateOfBirth;
+    private String birthDate;
     private String birthCity;
-    private Double averageMark;
+    private int averageMark;
 
-    public Student(String firstName, String lastName, String dateOfBirth, String birthCity, Double averageMark) {
+    // Конструктор для удобного создания объектов
+    public Student(String firstName, String lastName, String birthDate, String birthCity, int averageMark) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.dateOfBirth = dateOfBirth;
+        this.birthDate = birthDate;
         this.birthCity = birthCity;
         this.averageMark = averageMark;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
+    // Геттеры и сеттеры
+    public String getFirstName() { return firstName; }
+    public void setFirstName(String firstName) { this.firstName = firstName; }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+    public String getLastName() { return lastName; }
+    public void setLastName(String lastName) { this.lastName = lastName; }
 
-    public String getLastName() {
-        return lastName;
-    }
+    public String getBirthDate() { return birthDate; }
+    public void setBirthDate(String birthDate) { this.birthDate = birthDate; }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+    public String getBirthCity() { return birthCity; }
+    public void setBirthCity(String birthCity) { this.birthCity = birthCity; }
 
-    public String getDateOfBirth() {
-        return dateOfBirth;
-    }
+    public int getAverageMark() { return averageMark; }
+    public void setAverageMark(int averageMark) { this.averageMark = averageMark; }
 
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
-    public String getBirthCity() {
-        return birthCity;
-    }
-
-    public void setBirthCity(String birthCity) {
-        this.birthCity = birthCity;
-    }
-
-    public Double getAverageMark() {
-        return averageMark;
-    }
-
-    public void setAverageMark(Double averageMark) {
-        this.averageMark = averageMark;
+    @Override
+    public String toString() {
+        return firstName + " " + lastName + " (Балл: " + averageMark + ")";
     }
 }

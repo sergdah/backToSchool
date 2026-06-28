@@ -1,41 +1,43 @@
 package task13;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
+        // 1.1. Создаем студентов
+        Student s1 = new Student("Иван", "Иванов", "2005-05-12", "Минск", 8);
+        Student s2 = new Student("Анна", "Петрова", "2006-01-20", "Витебск", 4);
+        Student s3 = new Student("Сергей", "Сидоров", "2005-11-02", "Гродно", 9);
+        Student s4 = new Student("Ольга", "Козлова", "2005-08-15", "Брест", 5);
 
-        // students
-        List<Student> students1 = new ArrayList<>(List.of(
-                new Student("Люся", "Ивановская", "12.08.2001", "Плюсы", 5.0),
-                new Student("Аннита", "Петрович", "12.08.2002", "Браслав", 4.0)
+        // 1.2. Создаем группы
+        Group g1 = new Group("ИТ-11");
+        g1.getStudents().add(s1);
+        g1.getStudents().add(s2);
+        g1.getStudents().add(s3);
 
-        ));
-        List<Student> students2 = new ArrayList<>(List.of(
-                new Student("Сирожа", "Маладэц", "12.08.2001", "Краслава", 7.0),
-                new Student("Лена", "Головач", "12.08.2000", "Гродно", 8.0)
-        ));
+        Group g2 = new Group("ИТ-12");
+        g2.getStudents().add(s4);
 
-        // groups
-        List<Group> groups = new ArrayList<>(List.of(
-                new Group("ПcИТ-11", students1),
-                new Group("Verbal78", students2)
-        ));
+        // 1.3. Создаем Факультет
+        Faculty faculty = new Faculty("Факультет Информационных Технологий");
+        faculty.getGroups().add(g1);
+        faculty.getGroups().add(g2);
 
+        System.out.println("--- Исходные данные ---");
+        System.out.println(faculty);
 
-        // faculty
-//        Faculty faculty = new Faculty(List.of(
-//                new Faculty("КТФ", groups)
-//        ));
+        System.out.println("--- Проверка среднего балла ---");
+        System.out.printf("Средний балл группы %s: %.2f\n", g1.getGroupNumber(), g1.calculateAverageGroupMark());
 
+        // 1.4. Удаляем студентов из первой группы с баллом ниже 6 (Анна Петрова с баллом 4 удалится)
+        System.out.println("\n--- Удаление студентов с баллом ниже 6 (1.4) ---");
+        g1.removeStudentsByMark(6);
+        System.out.println(g1);
 
-        // Проверка: выведем структуру в консоль
-//        System.out.println("Факультет: " + faculty.getFacultyName());
-//        for (Group group : faculty.getGroups()) {
-//            System.out.println("  Группа: " + group.getGroupNumber());
-//            for (Student student : group.getStudents()) {
-//                System.out.println("    Студент: " + student.getFirstName() + " " + student.getLastName() + ", Средний балл: " + student.getAverageMark());
-//            }
+        // 1.5. Проверяем перевод студентов (в g2 всего 1 человек, значит сработает перевод в g1)
+        System.out.println("\n--- Проверка перевода студентов из малочисленной группы (1.5) ---");
+        g2.transferToGroup(g1);
+
+        System.out.println("\n--- Данные факультета после всех манипуляций ---");
+        System.out.println(faculty);
     }
 }
