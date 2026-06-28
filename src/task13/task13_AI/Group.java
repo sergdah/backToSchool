@@ -9,12 +9,16 @@ public class Group {
 
     public Group(String groupNumber) {
         this.groupNumber = groupNumber;
-        this.students = new ArrayList<>(); // Инициализируем пустой список
+        this.students = new ArrayList<>();
     }
 
     // 1.4. Удаление студентов с баллом ниже переданного
     public void removeStudentsByMark(int mark) {
-        students.removeIf(student -> student.getAverageMark() < mark);
+        for (int i = students.size() - 1; i >= 0; i--) {
+            if (mark > students.get(i).getAverageMark())
+                students.remove(i);
+        }
+        System.out.println(students);
     }
 
     // 1.5. Перевод студентов, если в группе меньше 2 человек
@@ -40,7 +44,6 @@ public class Group {
         return (double) sum / students.size();
     }
 
-    // Геттеры и сеттеры
     public String getGroupNumber() { return groupNumber; }
     public void setGroupNumber(String groupNumber) { this.groupNumber = groupNumber; }
 

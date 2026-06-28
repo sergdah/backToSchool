@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class Department {
     private String departmentName;
-    private Set<Ward> wards; // По условию пункт 1.3 требует Set
+    private Set<Ward> wards;
 
     public Department(String departmentName) {
         this.departmentName = departmentName;
@@ -27,7 +27,7 @@ public class Department {
             }
         }
 
-        System.out.println("=== Статистика по отделению '" + departmentName + "' ===");
+        System.out.println("Статистика по отделению '" + departmentName);
         System.out.println("Мужчин: " + maleCount);
         System.out.println("Женщин: " + femaleCount);
     }

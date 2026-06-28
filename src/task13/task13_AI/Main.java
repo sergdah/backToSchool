@@ -8,16 +8,16 @@ public class Main {
         Student s3 = new Student("Сергей", "Сидоров", "2005-11-02", "Гродно", 9);
         Student s4 = new Student("Ольга", "Козлова", "2005-08-15", "Брест", 5);
 
-        // 1.2. Создаем группы и распределяем студентов методом add
-        Group g1 = new Group("ПОИТ-11");
+        // 1.2. Создаем группы
+        Group g1 = new Group("ИТ-11");
         g1.getStudents().add(s1);
         g1.getStudents().add(s2);
         g1.getStudents().add(s3);
 
-        Group g2 = new Group("ПОИТ-12");
-        g2.getStudents().add(s4); // В этой группе остался 1 студент
+        Group g2 = new Group("ИТ-12");
+        g2.getStudents().add(s4);
 
-        // 1.3. Создаем Факультет и добавляем туда группы
+        // 1.3. Создаем Факультет
         Faculty faculty = new Faculty("Факультет Информационных Технологий");
         faculty.getGroups().add(g1);
         faculty.getGroups().add(g2);
@@ -25,8 +25,7 @@ public class Main {
         System.out.println("--- Исходные данные ---");
         System.out.println(faculty);
 
-        // 1.6. Проверяем подсчет среднего балла по группе до изменений
-        System.out.println("\n--- Проверка среднего балла (1.6) ---");
+        System.out.println("--- Проверка среднего балла ---");
         System.out.printf("Средний балл группы %s: %.2f\n", g1.getGroupNumber(), g1.calculateAverageGroupMark());
 
         // 1.4. Удаляем студентов из первой группы с баллом ниже 6 (Анна Петрова с баллом 4 удалится)

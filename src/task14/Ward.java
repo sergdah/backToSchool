@@ -25,7 +25,7 @@ public class Ward {
         // Проверка соответствия пола пациента типу палаты
         if ((patient.getGender() == Gender.MALE && roomType != RoomType.MALE_ROOM) ||
                 (patient.getGender() == Gender.FEMALE && roomType != RoomType.FEMALE_ROOM)) {
-            System.out.println("Ошибка: Нельзя положить пациента в палату чужого пола.");
+            System.out.println("Нельзя в палату чужого пола.");
             return false;
         }
 
@@ -35,7 +35,7 @@ public class Ward {
             return false;
         }
 
-        // Проверка диагноза (пункт 1.6): если палата не пуста, диагноз должен совпадать
+        // Проверка диагноза
         if (!patients.isEmpty()) {
             String existingDiagnosis = patients.get(0).getDiagnosis();
             if (!existingDiagnosis.equalsIgnoreCase(patient.getDiagnosis())) {

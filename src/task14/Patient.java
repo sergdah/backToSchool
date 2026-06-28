@@ -19,19 +19,30 @@ public class Patient {
         this.gender = gender;
     }
 
-    // Переопределение equals и hashCode для предотвращения дубликатов (пункт 1.4)
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Patient patient = (Patient) o;
-        return Objects.equals(id, patient.id);
+        if (!(o instanceof Patient patient)) return false;
+        return age == patient.age && Objects.equals(id, patient.id) && Objects.equals(firstName, patient.firstName) && Objects.equals(lastName, patient.lastName) && Objects.equals(diagnosis, patient.diagnosis) && gender == patient.gender;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(id, firstName, lastName, diagnosis, age, gender);
     }
+
+    // Переопределение equals и hashCode
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Patient patient = (Patient) o;
+//        return Objects.equals(id, patient.id);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id);
+//    }
 
     // Геттеры и сеттеры
     public String getId() { return id; }
