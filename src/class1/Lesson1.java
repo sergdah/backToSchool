@@ -1,7 +1,7 @@
 package class1;
-/*
-import java.util.Scanner;
 
+import java.util.Scanner;
+/*
 public class Lesson1 {
     //public class Lesson {
         public static void main(String[] args) {
@@ -43,9 +43,9 @@ public class Lesson1 {
 */
 
 
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Введите a");
-            int a = sc.nextInt();
+//            Scanner sc = new Scanner(System.in);
+//            System.out.println("Введите a");
+//            int a = sc.nextInt();
 /*      System.out.println("Введите b");
         int b = sc.nextInt();
         System.out.println("Введите c");
